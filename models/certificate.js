@@ -8,6 +8,9 @@ class Certificate {
     this.name = name;
     this.data = data;
   }
+  static __setDb(db) {
+    this.db = db;
+  }
 
   // Create a new certificate
   static create(name, data, callback) {

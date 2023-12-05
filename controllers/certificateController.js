@@ -1,9 +1,11 @@
 const Certificate = require("../models/certificate");
 
+// create a new certificate
 exports.createCertificate = (req, res) => {
   let name = req.body.name;
   let data = req.body.data;
 
+  // using the Certificate model
   Certificate.create(name, data, (err, certificate) => {
     if (err) {
       return res.status(500).send(err.message);
@@ -14,6 +16,7 @@ exports.createCertificate = (req, res) => {
   });
 };
 
+// get all certificates
 exports.getAllCertificates = (req, res) => {
   Certificate.getAll((err, certificates) => {
     if (err) {
@@ -22,7 +25,7 @@ exports.getAllCertificates = (req, res) => {
     res.send(certificates);
   });
 };
-
+// delete a certificate by ID
 exports.deleteCertificate = (req, res) => {
   let id = req.params.id;
 
