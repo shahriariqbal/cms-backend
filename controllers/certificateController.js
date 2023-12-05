@@ -22,6 +22,8 @@ exports.getAllCertificates = (req, res) => {
     if (err) {
       return res.status(500).send(err.message);
     }
+    // Sort certificates in descending order based on ID
+    certificates.sort((a, b) => b.id - a.id);
     res.send(certificates);
   });
 };
