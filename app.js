@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors"); 
 const sqlite3 = require("sqlite3").verbose();
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
@@ -9,6 +10,7 @@ const port = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 app.use("/", indexRouter);
 
 app.listen(port, () => {
@@ -38,7 +40,7 @@ const options = {
 const specs = swaggerJsdoc(options);
 
 app.use(
-  '/api-docs',
+  '/api',
   swaggerUi.serve,
   swaggerUi.setup(specs)
 );
