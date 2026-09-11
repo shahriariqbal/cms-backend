@@ -41,3 +41,12 @@ npm test
 ## API Documentation
 
 The API documentation is generated using Swagger. You can view the API documentation by navigating to `http://localhost:3000/api` in your web browser.
+
+## Available Scripts
+
+- `npm start` — start the API server
+- `npm test` — run the Jest test suite
+
+## Related Repositories
+
+- Frontend app: [cms-frontend](https://github.com/shahriariqbal/cms-frontend)
